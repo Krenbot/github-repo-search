@@ -1,5 +1,4 @@
-import Button from './button'
-import List from './list'
+import Button from "./button"
 
 const ListItem = ({ repo, saved = false, toggleSaved }) => {
     const { html_url, full_name, stargazers_count, description, owner } = repo
@@ -19,7 +18,6 @@ const ListItem = ({ repo, saved = false, toggleSaved }) => {
                 alt="avatar"
                 style={{ width: 75 }}
             />
-
             <div className="ms-2 me-auto">
                 <div className="fw-bold">
                     <a href={html_url} target="_blank">
@@ -27,7 +25,7 @@ const ListItem = ({ repo, saved = false, toggleSaved }) => {
                     </a>
                 </div>
                 {description}<br />
-                <span className="badge bg-primary rounded-pill">
+                <span className="badge bg-success rounded-pill">
                     <i className="bi bi-star-fill"></i> {stargazers_count}
                 </span>
             </div>

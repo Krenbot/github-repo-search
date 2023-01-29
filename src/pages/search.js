@@ -70,7 +70,7 @@ const SearchPage = props => {
                 ? <Spinner />
                 : <List>
                     {repos.map(repo => {
-                        const foundRepo = savedRepos.find(savedRepo => savedRepo === repo.id)
+                        const foundRepo = savedRepos.find(savedRepo => savedRepo.id === repo.id)
                         return (
                             <ListItem
                                 repo={repo}
@@ -82,6 +82,7 @@ const SearchPage = props => {
                     })}
                 </List>
             }
+
         </Container>
     )
 }
