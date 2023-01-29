@@ -3,7 +3,6 @@ const Button = ({ children, className = 'btn-primary', ...restOfProps }) => {
         <button className=
             {`btn ${className}`}{...restOfProps}>
             {children}
-
         </button >
     )
 }
