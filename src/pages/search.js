@@ -7,15 +7,23 @@ const SearchPage = props => {
     const [loading, setLoading] = useState(false)
     const [repos, setRepos] = useState([])
     const [savedRepos, setSavedRepos] = useState([])
-
+    const searchRepos = () => {
+        console.log('searching repos...', term)
+    }
 
     return (
         <Container className="mt-3">
             <h1>Search GitHub Repos: <span className='badge bg-secondary'>{term}</span></h1>
 
-            <SearchForm />
+            <SearchForm
+                term={term}
+                setTerm={setTerm}
+                handleSubmit={searchRepos}
+            />
 
             {/* list */}
+
+
         </Container>
     )
 }
