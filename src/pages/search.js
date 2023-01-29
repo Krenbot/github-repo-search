@@ -44,13 +44,12 @@ const SearchPage = props => {
 
         let updatedSavedRepos
         if (foundRepo) {
-            //remove repo from local storage
-            updatedSavedRepos = savedRepos.filter(savedRepo => savedRepo.id != repo.id)
+            // remove the repo from localStorage
+            updatedSavedRepos = savedRepos.filter(savedRepo => savedRepo.id !== repo.id)
         } else {
-            //add repo to local storage
+            // add repo to localStorage
             updatedSavedRepos = [...savedRepos, repo]
         }
-
         localStorage.setItem(lsKey, JSON.stringify(updatedSavedRepos))
         loadSavedRepos()
     }
