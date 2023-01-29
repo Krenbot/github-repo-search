@@ -1,14 +1,18 @@
 import { useState } from 'react'
 import Container from '../components/container'
 import SearchForm from '../components/searchForm'
+import API from '../utils/api'
 
 const SearchPage = props => {
     const [term, setTerm] = useState('React')
     const [loading, setLoading] = useState(false)
     const [repos, setRepos] = useState([])
     const [savedRepos, setSavedRepos] = useState([])
-    const searchRepos = () => {
+
+    const searchRepos = async () => {
         console.log('searching repos...', term)
+        const response = await API.searchRepos(term)
+        console.log(response)
     }
 
     return (
