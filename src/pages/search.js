@@ -2,6 +2,8 @@ import { useState } from 'react'
 import Container from '../components/container'
 import SearchForm from '../components/searchForm'
 import API from '../utils/api'
+import spinner from '../components/spinner'
+import Spinner from '../components/spinner'
 
 const SearchPage = props => {
     const [term, setTerm] = useState('React')
@@ -10,9 +12,18 @@ const SearchPage = props => {
     const [savedRepos, setSavedRepos] = useState([])
 
     const searchRepos = async () => {
-        console.log('searching repos...', term)
-        const response = await API.searchRepos(term)
-        console.log(response)
+        if (term) {
+            try {
+                setLoading(true)
+                console.log('searching repos...', term)
+                const response = await API.searchRepos(term)
+                setRepos(response.data.items)
+            } catch (err) {
+                console.log(err)
+            } finally {
+                setLoading(false)
+            }
+        }
     }
 
     return (
@@ -25,7 +36,9 @@ const SearchPage = props => {
                 handleSubmit={searchRepos}
             />
 
-            {/* list */}
+            {loading
+                ? <Spinner />
+                : <pre>{JSON.stringify(repos, null, 2)}</pre>}
 
 
         </Container>
