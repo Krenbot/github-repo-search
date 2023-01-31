@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/github-repo-search/static/js/main.b20eb8c6.js",
+    "static/js/787.3f4c3b6c.chunk.js": "/github-repo-search/static/js/787.3f4c3b6c.chunk.js",
+    "index.html": "/github-repo-search/index.html",
+    "main.b20eb8c6.js.map": "/github-repo-search/static/js/main.b20eb8c6.js.map",
+    "787.3f4c3b6c.chunk.js.map": "/github-repo-search/static/js/787.3f4c3b6c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.b20eb8c6.js"
+  ]
+}
